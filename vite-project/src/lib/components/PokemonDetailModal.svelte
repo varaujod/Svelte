@@ -4,7 +4,8 @@
 
 <div class="modal-backdrop">
     <article class="modal-content">
-        <button class="close-button" onclick={onClose}>&tipos</button>
+        <button class="close-button" onclick={onClose}>&times;</button>
+        
     </article>
 </div>
 

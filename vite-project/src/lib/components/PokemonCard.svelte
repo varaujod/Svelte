@@ -1,15 +1,17 @@
 <script>
-    const {pokemon} = $props();
-
+    const { pokemon, onSelect } = $props()
 </script>
 
-<article>
-    <img src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default} alt={pokemon.name}>
-    <div class="info">
-        <span class="pokemon-id">#{String(pokemon.id).padStart(3, '0')}</span>
-        <h3 class="pokemon-name">{pokemon.name}</h3>
-    </div>
-</article>
+<button class="card-button" onclick={onSelect}>
+    <article>
+        <img src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default} alt={pokemon.name}>
+        <div class="info">
+            <span class="pokemon-id">#{String(pokemon.id).padStart(3, '0')}</span>
+            <h3 class="pokemon-name">{pokemon.name}</h3>
+        </div>
+    </article>
+</button>
+
 
 <style>
     .card-button {
@@ -54,4 +56,5 @@
         max-height: 150px;
         object-fit: contain;
     }
+
 </style>
