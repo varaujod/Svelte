@@ -75,7 +75,6 @@
           {/each}
       </select>
   </div>
-
   
   {#if isLoading}
       <p>Carregando pokemons...</p>

@@ -6,6 +6,29 @@
     <article class="modal-content">
         <button class="close-button" onclick={onClose}>&times;</button>
         
+        <img src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default} alt={pokemon.name}>
+        
+        <div class="info">
+            <span class="pokemon-id">#{String(pokemon.id).padStart(3, '0')}</span>
+            <h2 class="pokemon-name">{pokemon.name}</h2>
+            
+            <div class="types">
+                {#each pokemon.types as typeInfo}
+                    <span class="type {typeInfo.type.name}">{typeInfo.type.name}</span>
+                {/each}
+            </div>
+
+            <div class="stats">
+                <h3>Base Stats</h3>
+                {#each pokemon.stats as stat}
+                    <div class="stat-item">
+                        <span class="stat-name">{stat.stat.name.replace('-', ' ')}</span>
+                        <span class="stat-value">{stat.base_stat}</span>
+                        <progress value={stat.base_stat} max="150"></progress>
+                    </div>
+                {/each}
+            </div>
+        </div>
     </article>
 </div>
 
